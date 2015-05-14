@@ -16,6 +16,7 @@
 		A14846D31B048D690037BFAD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14846D21B048D690037BFAD /* LaunchScreen.xib */; };
 		A14846D81B048E140037BFAD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A14846D61B048E140037BFAD /* Localizable.strings */; };
 		A14846DD1B0490550037BFAD /* LocaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846DC1B0490550037BFAD /* LocaleViewController.swift */; };
+		A14846DF1B04A8AD0037BFAD /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846DE1B04A8AD0037BFAD /* HealthKitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		A14846DA1B048E270037BFAD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = resources/languages/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A14846DB1B048E2D0037BFAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "resources/languages/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A14846DC1B0490550037BFAD /* LocaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocaleViewController.swift; path = controllers/LocaleViewController.swift; sourceTree = "<group>"; };
+		A14846DE1B04A8AD0037BFAD /* HealthKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthKitViewController.swift; path = controllers/HealthKitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				A14846B01B0489750037BFAD /* DateTimeViewController.swift */,
+				A14846DE1B04A8AD0037BFAD /* HealthKitViewController.swift */,
 				A14846DC1B0490550037BFAD /* LocaleViewController.swift */,
 				A14846B21B0489750037BFAD /* NumberViewController.swift */,
 			);
@@ -246,6 +249,7 @@
 			files = (
 				A14846DD1B0490550037BFAD /* LocaleViewController.swift in Sources */,
 				A14846B31B0489750037BFAD /* NumberViewController.swift in Sources */,
+				A14846DF1B04A8AD0037BFAD /* HealthKitViewController.swift in Sources */,
 				A14846AF1B0489750037BFAD /* AppDelegate.swift in Sources */,
 				A14846B11B0489750037BFAD /* DateTimeViewController.swift in Sources */,
 			);
