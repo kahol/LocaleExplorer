@@ -9,7 +9,7 @@
 import UIKit
 
 // Keep track of the user's input locale code. Setting as global since it will be used in the other ViewControllers.
-var currentLocaleCode = ""
+var currentLocaleCode = "en-US"
 
 class LocaleViewController: UIViewController {
 
@@ -64,20 +64,24 @@ class LocaleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Actions
+    
     // Change the current locale based on the user's input.
     @IBAction func applyLocale(sender: AnyObject) {
         // If there's something in the text field, then set that as the new current locale.
         // *TODO* - add checks to see if code entered is valid.
-        if let userLocale = localeField.text {
+        if let userLocaleCode = localeField.text {
             let deviceLocale = NSLocale.currentLocale()
             
-            currentLocaleCode = userLocale
+            currentLocaleCode = userLocaleCode
             currentLocaleCodePlaceholderLabel.text = currentLocaleCode
             currentLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocaleCode)
             
             localeField.text = ""
         }
     }
+    
+    // MARK: Helper Methods
     
     // Set the localized strings.
     func localizeStrings() {
@@ -91,15 +95,5 @@ class LocaleViewController: UIViewController {
         localeHintLabel.text = NSLocalizedString("IDS_LOCALE_HINT_TEXT", comment: "")
         applyButton.setTitle(NSLocalizedString("IDS_APPLY_BTN", comment: ""), forState: UIControlState.Normal)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
