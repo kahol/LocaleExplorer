@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A14846AF1B0489750037BFAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846AE1B0489750037BFAD /* AppDelegate.swift */; };
-		A14846B11B0489750037BFAD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B01B0489750037BFAD /* FirstViewController.swift */; };
-		A14846B31B0489750037BFAD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B21B0489750037BFAD /* SecondViewController.swift */; };
+		A14846B11B0489750037BFAD /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B01B0489750037BFAD /* DateTimeViewController.swift */; };
+		A14846B31B0489750037BFAD /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B21B0489750037BFAD /* NumberViewController.swift */; };
 		A14846B81B0489750037BFAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14846B71B0489750037BFAD /* Images.xcassets */; };
 		A14846C71B0489750037BFAD /* LocaleExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846C61B0489750037BFAD /* LocaleExplorerTests.swift */; };
 		A14846D11B048D520037BFAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14846D01B048D520037BFAD /* Main.storyboard */; };
 		A14846D31B048D690037BFAD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14846D21B048D690037BFAD /* LaunchScreen.xib */; };
 		A14846D81B048E140037BFAD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A14846D61B048E140037BFAD /* Localizable.strings */; };
+		A14846DD1B0490550037BFAD /* LocaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846DC1B0490550037BFAD /* LocaleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +32,8 @@
 		A14846A91B0489750037BFAD /* LocaleExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocaleExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14846AD1B0489750037BFAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14846AE1B0489750037BFAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A14846B01B0489750037BFAD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = controllers/FirstViewController.swift; sourceTree = "<group>"; };
-		A14846B21B0489750037BFAD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = controllers/SecondViewController.swift; sourceTree = "<group>"; };
+		A14846B01B0489750037BFAD /* DateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateTimeViewController.swift; path = controllers/DateTimeViewController.swift; sourceTree = "<group>"; };
+		A14846B21B0489750037BFAD /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NumberViewController.swift; path = controllers/NumberViewController.swift; sourceTree = "<group>"; };
 		A14846B71B0489750037BFAD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = resources/Images.xcassets; sourceTree = "<group>"; };
 		A14846C01B0489750037BFAD /* LocaleExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocaleExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14846C51B0489750037BFAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		A14846D91B048E1F0037BFAD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = resources/languages/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A14846DA1B048E270037BFAD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = resources/languages/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A14846DB1B048E2D0037BFAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "resources/languages/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A14846DC1B0490550037BFAD /* LocaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocaleViewController.swift; path = controllers/LocaleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,9 @@
 		A14846D41B048DDB0037BFAD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A14846B01B0489750037BFAD /* FirstViewController.swift */,
-				A14846B21B0489750037BFAD /* SecondViewController.swift */,
+				A14846B01B0489750037BFAD /* DateTimeViewController.swift */,
+				A14846DC1B0490550037BFAD /* LocaleViewController.swift */,
+				A14846B21B0489750037BFAD /* NumberViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -241,9 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14846B31B0489750037BFAD /* SecondViewController.swift in Sources */,
+				A14846DD1B0490550037BFAD /* LocaleViewController.swift in Sources */,
+				A14846B31B0489750037BFAD /* NumberViewController.swift in Sources */,
 				A14846AF1B0489750037BFAD /* AppDelegate.swift in Sources */,
-				A14846B11B0489750037BFAD /* FirstViewController.swift in Sources */,
+				A14846B11B0489750037BFAD /* DateTimeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
