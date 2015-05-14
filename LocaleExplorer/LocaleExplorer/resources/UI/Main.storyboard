@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="750" y="-310"/>
         </scene>
         <!--HealthKit-->
         <scene sceneID="dFl-1A-na8">
@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsO-G7-9Oc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1072"/>
+            <point key="canvasLocation" x="750" y="1094"/>
         </scene>
         <!--Locale-->
         <scene sceneID="dzY-Xd-crb">
@@ -158,15 +158,15 @@
                     <tabBarItem key="tabBarItem" title="Locale" image="second" id="gbn-ep-M7i"/>
                     <connections>
                         <outlet property="applyButton" destination="F2M-pY-S00" id="p6g-bb-J3D"/>
-                        <outlet property="currentLocaleCode" destination="mQb-Ls-ddz" id="Uzg-vp-8FE"/>
                         <outlet property="currentLocaleCodeLabel" destination="YeP-ke-AJh" id="au7-pY-4Ca"/>
-                        <outlet property="currentLocaleName" destination="VLu-qg-1p1" id="4p2-RE-wwm"/>
+                        <outlet property="currentLocaleCodePlaceholderLabel" destination="mQb-Ls-ddz" id="wja-XR-PHe"/>
                         <outlet property="currentLocaleNameLabel" destination="DLU-3k-4AX" id="fcT-cz-Ev2"/>
+                        <outlet property="currentLocaleNamePlaceholderLabel" destination="VLu-qg-1p1" id="syQ-OR-MIk"/>
                         <outlet property="currentSettingsLabel" destination="eP1-M4-gXF" id="OjG-gh-2V4"/>
-                        <outlet property="deviceLocaleCode" destination="Ne9-zy-G2Y" id="JaI-zX-Efg"/>
                         <outlet property="deviceLocaleCodeLabel" destination="M1Z-fB-SQ5" id="XZT-YA-iDJ"/>
-                        <outlet property="deviceLocaleName" destination="3T9-yu-vgW" id="TVc-EN-QWM"/>
+                        <outlet property="deviceLocaleCodePlaceholderLabel" destination="Ne9-zy-G2Y" id="jqQ-V6-FPJ"/>
                         <outlet property="deviceLocaleNameLabel" destination="KkR-cl-RHE" id="ZS5-v7-lai"/>
+                        <outlet property="deviceLocaleNamePlaceholderLabel" destination="3T9-yu-vgW" id="osi-xB-wmh"/>
                         <outlet property="deviceSettingsLabel" destination="9R8-0n-cpV" id="9u1-1r-MpK"/>
                         <outlet property="localeField" destination="DSa-Av-GpX" id="lSg-SQ-OMK"/>
                         <outlet property="localeHintLabel" destination="NIj-1X-zhq" id="nYC-sh-c75"/>
@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoV-Si-uMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1072"/>
+            <point key="canvasLocation" x="750" y="-1019"/>
         </scene>
         <!--Numbers & Currency-->
         <scene sceneID="wg7-f3-ORb">
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="750" y="382"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -207,10 +207,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="xAl-Hn-vn4" kind="relationship" relationship="viewControllers" id="nab-uA-dUZ"/>
-                        <segue destination="kby-Um-pmr" kind="relationship" relationship="viewControllers" id="7fQ-wB-iGX"/>
+                        <segue destination="kby-Um-pmr" kind="relationship" relationship="viewControllers" id="FgK-tD-puX"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="KwZ-bD-TKM"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="us2-No-xDP"/>
+                        <segue destination="xAl-Hn-vn4" kind="relationship" relationship="viewControllers" id="zyF-3P-IxX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

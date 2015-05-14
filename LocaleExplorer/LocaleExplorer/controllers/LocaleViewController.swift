@@ -8,13 +8,16 @@
 
 import UIKit
 
+// Keep track of the user's input locale code. Setting as global since it will be used in the other ViewControllers.
+var currentLocaleCode = ""
+
 class LocaleViewController: UIViewController {
 
     // Labels that will be replaced with runtime values.
-    @IBOutlet weak var deviceLocaleCode: UILabel!
-    @IBOutlet weak var deviceLocaleName: UILabel!
-    @IBOutlet weak var currentLocaleCode: UILabel!
-    @IBOutlet weak var currentLocaleName: UILabel!
+    @IBOutlet weak var deviceLocaleCodePlaceholderLabel: UILabel!
+    @IBOutlet weak var deviceLocaleNamePlaceholderLabel: UILabel!
+    @IBOutlet weak var currentLocaleCodePlaceholderLabel: UILabel!
+    @IBOutlet weak var currentLocaleNamePlaceholderLabel: UILabel!
     
     // Field that will contain the user's input locale.
     @IBOutlet weak var localeField: UITextField!
@@ -30,24 +33,22 @@ class LocaleViewController: UIViewController {
     @IBOutlet weak var localeHintLabel: UILabel!
     @IBOutlet weak var applyButton: UIButton!
     
-    // Keep track of the user's input locale code.
-    var currentLocale = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Initially set the current locale to the device locale.
         let deviceLocale = NSLocale.currentLocale()
-        currentLocale = deviceLocale.localeIdentifier
+        let deviceLocaleCode = deviceLocale.localeIdentifier
+        currentLocaleCode = deviceLocaleCode
         
         // Set the localized strings.
         localizeStrings()
         
         // Show locale information.
-        deviceLocaleCode.text = deviceLocale.localeIdentifier
-        deviceLocaleName.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: deviceLocale.localeIdentifier)
-        currentLocaleCode.text = currentLocale
-        currentLocaleName.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocale)
+        deviceLocaleCodePlaceholderLabel.text = deviceLocaleCode
+        deviceLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: deviceLocaleCode)
+        currentLocaleCodePlaceholderLabel.text = currentLocaleCode
+        currentLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocaleCode)
         
     }
 
@@ -68,9 +69,11 @@ class LocaleViewController: UIViewController {
         // If there's something in the text field, then set that as the new current locale.
         // *TODO* - add checks to see if code entered is valid.
         if let userLocale = localeField.text {
-            currentLocale = userLocale
-            currentLocaleCode.text = currentLocale
-            currentLocaleName.text = NSLocale.currentLocale().displayNameForKey(NSLocaleIdentifier, value: currentLocale)
+            let deviceLocale = NSLocale.currentLocale()
+            
+            currentLocaleCode = userLocale
+            currentLocaleCodePlaceholderLabel.text = currentLocaleCode
+            currentLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocaleCode)
             
             localeField.text = ""
         }
