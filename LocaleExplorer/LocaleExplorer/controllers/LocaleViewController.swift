@@ -34,14 +34,13 @@ class LocaleViewController: UIViewController {
     @IBOutlet weak var applyButton: UIButton!
     
     // Device locale will not change, so keeping it here.
-    let deviceLocale = NSLocale.currentLocale()
-    var deviceLocaleCode = ""
+    private let deviceLocale = NSLocale.currentLocale()
+    private let deviceLocaleCode = NSLocale.currentLocale().localeIdentifier
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Initially set the current locale to the device locale.
-        deviceLocaleCode = deviceLocale.localeIdentifier
         currentLocaleCode = deviceLocaleCode
         
         // Set the localized strings.

@@ -35,11 +35,11 @@ class DateTimeViewController: UIViewController {
     @IBOutlet weak var increaseTimeLabel: UILabel!
     
     // Only need one DateFormatter, just keep changing its locale.
-    let dateFormatter = NSDateFormatter()
+    private let dateFormatter = NSDateFormatter()
     
     // Keep track of the current slider values to offset the date and time by.
-    var dateSliderValue = 0
-    var timeSliderValue = 0
+    private var dateSliderValue = 0
+    private var timeSliderValue = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
