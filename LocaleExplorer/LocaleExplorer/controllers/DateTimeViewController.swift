@@ -31,6 +31,12 @@ class DateTimeViewController: UIViewController {
     @IBOutlet weak var timeMediumLabel: UILabel!
     @IBOutlet weak var timeLongLabel: UILabel!
     @IBOutlet weak var firstDayLabel: UILabel!
+    @IBOutlet weak var increaseDateLabel: UILabel!
+    @IBOutlet weak var increaseTimeLabel: UILabel!
+    
+    // Keep track of the current slider values to offset the date and time by.
+    var dateSliderValue = 0
+    var timeSliderValue = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +45,16 @@ class DateTimeViewController: UIViewController {
         localizeStrings()
         
         // Show localized dates and times.
-        showDatesAndTimes()
+        showDates()
+        showTimes()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Call this again in case the current locale has changed.
-        showDatesAndTimes()
+        // Call these again in case the current locale has changed.
+        showDates()
+        showTimes()
     }
     
     // The strings used for the tabs can only be set in awakeFromNib(), not in viewDidLoad().
@@ -61,6 +69,22 @@ class DateTimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Actions
+    
+    @IBAction func increaseDateInterval(sender: AnyObject) {
+        let mySlider = sender as! UISlider
+        dateSliderValue = Int(mySlider.value)
+        
+        showDates()
+    }
+    
+    @IBAction func increaseTimeInterval(sender: AnyObject) {
+        let mySlider = sender as! UISlider
+        timeSliderValue = Int(mySlider.value)
+        
+        showTimes()
+    }
+    
     // MARK: Helper Methods
     
     // Set the localized strings.
@@ -75,17 +99,20 @@ class DateTimeViewController: UIViewController {
         timeMediumLabel.text = NSLocalizedString("IDS_MEDIUM", comment: "")
         timeLongLabel.text = NSLocalizedString("IDS_LONG", comment: "")
         firstDayLabel.text = NSLocalizedString("IDS_FIRST_DAY", comment: "")
+        increaseDateLabel.text = NSLocalizedString("IDS_INCREASE_DATE", comment: "")
+        increaseTimeLabel.text = NSLocalizedString("IDS_INCREASE_TIME", comment: "")
     }
     
-    // Show localized dates and times.
-    func showDatesAndTimes() {
+    // Show localized dates.
+    func showDates() {
         // Setup our date formatter using the currently set locale.
         let currentLocale = NSLocale(localeIdentifier: currentLocaleCode)
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = currentLocale
         
-        // The date and time at this moment.
-        let date = NSDate()
+        // The date offset from the slider value, which can be from 0 to 365.
+        let dateInterval = 60 * 60 * 24 * dateSliderValue;
+        let date = NSDate(timeIntervalSinceNow: Double(dateInterval))
         
         // Show localized dates.
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
@@ -100,6 +127,23 @@ class DateTimeViewController: UIViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
         dateFullPlaceholderLabel.text = dateFormatter.stringFromDate(date)
         
+        // Show the first day of the week for this locale.
+        let days = dateFormatter.weekdaySymbols
+        let calendar = dateFormatter.calendar
+        firstDayPlaceholderLabel.text = days[calendar.firstWeekday - 1] as? String
+    }
+    
+    // Show localized times.
+    func showTimes() {
+        // Setup our date formatter using the currently set locale.
+        let currentLocale = NSLocale(localeIdentifier: currentLocaleCode)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = currentLocale
+        
+        // The time offset from the slider value, which can be from 0 to 24 * 60 (1440).
+        let timeInterval = 60 * timeSliderValue;
+        let date = NSDate(timeIntervalSinceNow: Double(timeInterval))
+        
         // Show localized times.
         dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
         
@@ -111,11 +155,6 @@ class DateTimeViewController: UIViewController {
         
         dateFormatter.timeStyle = NSDateFormatterStyle.LongStyle
         timeLongPlaceholderLabel.text = dateFormatter.stringFromDate(date)
-        
-        // Show the first day of the week for this locale.
-        let days = dateFormatter.weekdaySymbols
-        let calendar = dateFormatter.calendar
-        firstDayPlaceholderLabel.text = days[calendar.firstWeekday - 1] as? String
     }
 }
 
