@@ -71,15 +71,25 @@ class LocaleViewController: UIViewController {
     
     // Change the current locale based on the user's input.
     @IBAction func applyLocale(sender: AnyObject) {
-        // If there's something in the text field, then set that as the new current locale.
-        // *TODO* - add checks to see if code entered is valid.
-        if let userLocaleCode = localeField.text {
-            currentLocaleCode = userLocaleCode
-            currentLocaleCodePlaceholderLabel.text = currentLocaleCode
-            currentLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocaleCode)
+        let inputLocaleCode = localeField.text
+        
+        // Any invalid locale code, including an empty string, causes displayNameForKey to return nil.
+        if let inputLocaleName = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: inputLocaleCode) {
+            currentLocaleCode = inputLocaleCode
+            currentLocaleCodePlaceholderLabel.text = inputLocaleCode
+            currentLocaleNamePlaceholderLabel.text = inputLocaleName
+        } else {
+            // Let the user know their input locale was invalid.
+            let alertTitle = NSLocalizedString("IDS_ALERT_TITLE", comment: "")
+            let alertMessage = String(format: NSLocalizedString("IDS_ALERT_MESSAGE", comment: ""), inputLocaleCode)
+            let alertOK = NSLocalizedString("IDS_ALERT_OK", comment: "")
             
-            localeField.text = ""
+            var alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: alertOK, style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
         }
+        
+        localeField.text = ""
     }
     
     // MARK: Helper Methods
