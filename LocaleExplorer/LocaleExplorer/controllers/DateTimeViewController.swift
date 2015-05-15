@@ -34,6 +34,9 @@ class DateTimeViewController: UIViewController {
     @IBOutlet weak var increaseDateLabel: UILabel!
     @IBOutlet weak var increaseTimeLabel: UILabel!
     
+    // Only need one DateFormatter, just keep changing its locale.
+    let dateFormatter = NSDateFormatter()
+    
     // Keep track of the current slider values to offset the date and time by.
     var dateSliderValue = 0
     var timeSliderValue = 0
@@ -107,7 +110,6 @@ class DateTimeViewController: UIViewController {
     func showDates() {
         // Setup our date formatter using the currently set locale.
         let currentLocale = NSLocale(localeIdentifier: currentLocaleCode)
-        let dateFormatter = NSDateFormatter()
         dateFormatter.locale = currentLocale
         
         // The date offset from the slider value, which can be from 0 to 365.
@@ -115,6 +117,8 @@ class DateTimeViewController: UIViewController {
         let date = NSDate(timeIntervalSinceNow: Double(dateInterval))
         
         // Show localized dates.
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateShortPlaceholderLabel.text = dateFormatter.stringFromDate(date)
         
@@ -137,7 +141,6 @@ class DateTimeViewController: UIViewController {
     func showTimes() {
         // Setup our date formatter using the currently set locale.
         let currentLocale = NSLocale(localeIdentifier: currentLocaleCode)
-        let dateFormatter = NSDateFormatter()
         dateFormatter.locale = currentLocale
         
         // The time offset from the slider value, which can be from 0 to 24 * 60 (1440).
