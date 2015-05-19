@@ -13,6 +13,8 @@ var currentLocaleCode = "en-US"
 
 class LocaleViewController: UIViewController {
 
+    // MARK: Properties
+    
     // Labels that will be replaced with runtime values.
     @IBOutlet weak var deviceLocaleCodePlaceholderLabel: UILabel!
     @IBOutlet weak var deviceLocaleNamePlaceholderLabel: UILabel!
@@ -33,9 +35,11 @@ class LocaleViewController: UIViewController {
     @IBOutlet weak var localeHintLabel: UILabel!
     @IBOutlet weak var applyButton: UIButton!
     
-    // Device locale will not change, so keeping it here.
-    private let deviceLocale = NSLocale.currentLocale()
-    private let deviceLocaleCode = NSLocale.currentLocale().localeIdentifier
+    // Keep track of the device locale.
+    private var deviceLocale = NSLocale.currentLocale()
+    private var deviceLocaleCode = NSLocale.currentLocale().localeIdentifier
+    
+    // MARK: UIViewController Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +51,13 @@ class LocaleViewController: UIViewController {
         localizeStrings()
         
         // Show locale information.
-        deviceLocaleCodePlaceholderLabel.text = deviceLocaleCode
-        deviceLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: deviceLocaleCode)
-        currentLocaleCodePlaceholderLabel.text = currentLocaleCode
-        currentLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocaleCode)
+        showLocale()
         
+        // Watch for the user changing their locale while the app is running.
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                               selector: "deviceLocaleDidChange:",
+                                                   name: NSCurrentLocaleDidChangeNotification,
+                                                 object: nil)
     }
 
     // The strings used for the tabs can only be set in awakeFromNib(), not in viewDidLoad().
@@ -64,6 +70,16 @@ class LocaleViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Notification Handler
+    
+    // When user changes the locale (region format) in Settings, we are notified here to update the locale in the UI.
+    func deviceLocaleDidChange(notif: NSNotification) {
+        deviceLocale = NSLocale.currentLocale()
+        deviceLocaleCode = NSLocale.currentLocale().localeIdentifier
+        
+        showLocale()
     }
     
     // MARK: Actions
@@ -83,7 +99,7 @@ class LocaleViewController: UIViewController {
             let alertMessage = String(format: NSLocalizedString("IDS_ALERT_MESSAGE", comment: ""), inputLocaleCode)
             let alertOK = NSLocalizedString("IDS_ALERT_OK", comment: "")
             
-            var alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: alertOK, style: .Default, handler: nil))
             presentViewController(alert, animated: true, completion: nil)
         }
@@ -104,6 +120,14 @@ class LocaleViewController: UIViewController {
         setLocaleLabel.text = NSLocalizedString("IDS_SET_LOCALE", comment: "")
         localeHintLabel.text = NSLocalizedString("IDS_LOCALE_HINT_TEXT", comment: "")
         applyButton.setTitle(NSLocalizedString("IDS_APPLY_BTN", comment: ""), forState: UIControlState.Normal)
+    }
+    
+    // Show the device and current locale information.
+    func showLocale() {
+        deviceLocaleCodePlaceholderLabel.text = deviceLocaleCode
+        deviceLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: deviceLocaleCode)
+        currentLocaleCodePlaceholderLabel.text = currentLocaleCode
+        currentLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocaleCode)
     }
 
 }

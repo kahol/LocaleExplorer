@@ -46,16 +46,13 @@ class DateTimeViewController: UIViewController {
         
         // Set the localized strings.
         localizeStrings()
-        
-        // Show localized dates and times.
-        showDates()
-        showTimes()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Call these again in case the current locale has changed.
+        // Display the dates and times. Having it here ensures these will also get called when
+        // the user changes tabs, in case they changed the current locale.
         showDates()
         showTimes()
     }
