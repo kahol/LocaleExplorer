@@ -10,6 +10,8 @@ import UIKit
 
 class DateTimeViewController: UIViewController {
 
+    // MARK: Properties
+    
     // Labels that will be replaced with runtime values.
     @IBOutlet weak var dateShortPlaceholderLabel: UILabel!
     @IBOutlet weak var dateMediumPlaceholderLabel: UILabel!
@@ -40,6 +42,8 @@ class DateTimeViewController: UIViewController {
     // Keep track of the current slider values to offset the date and time by.
     private var dateSliderValue = 0
     private var timeSliderValue = 0
+    
+    // MARK: UIViewController Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
