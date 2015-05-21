@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A12269C01B0DAC2600CE0992 /* PluralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12269BF1B0DAC2600CE0992 /* PluralViewController.swift */; };
 		A12269C41B0DAD7900CE0992 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A12269C31B0DAD7900CE0992 /* AddressViewController.m */; };
+		A12269C71B0DB16300CE0992 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = A12269C51B0DB16300CE0992 /* Localizable.stringsdict */; };
 		A14846AF1B0489750037BFAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846AE1B0489750037BFAD /* AppDelegate.swift */; };
 		A14846B11B0489750037BFAD /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B01B0489750037BFAD /* DateTimeViewController.swift */; };
 		A14846B31B0489750037BFAD /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B21B0489750037BFAD /* NumberViewController.swift */; };
@@ -36,6 +37,10 @@
 		A12269C11B0DAD7900CE0992 /* LocaleExplorer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocaleExplorer-Bridging-Header.h"; sourceTree = "<group>"; };
 		A12269C21B0DAD7900CE0992 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressViewController.h; path = controllers/AddressViewController.h; sourceTree = "<group>"; };
 		A12269C31B0DAD7900CE0992 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressViewController.m; path = controllers/AddressViewController.m; sourceTree = "<group>"; };
+		A12269C61B0DB16300CE0992 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = en; path = resources/languages/en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		A12269C81B0DB16D00CE0992 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = fr; path = resources/languages/fr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		A12269C91B0DB16F00CE0992 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = ru; path = resources/languages/ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		A12269CA1B0DB17200CE0992 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "zh-Hant"; path = "resources/languages/zh-Hant.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		A14846A91B0489750037BFAD /* LocaleExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocaleExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14846AD1B0489750037BFAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14846AE1B0489750037BFAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +153,7 @@
 				A14846B71B0489750037BFAD /* Images.xcassets */,
 				A14846D21B048D690037BFAD /* LaunchScreen.xib */,
 				A14846D61B048E140037BFAD /* Localizable.strings */,
+				A12269C51B0DB16300CE0992 /* Localizable.stringsdict */,
 				A14846D01B048D520037BFAD /* Main.storyboard */,
 			);
 			name = resources;
@@ -239,6 +245,7 @@
 				A14846D11B048D520037BFAD /* Main.storyboard in Resources */,
 				A14846D81B048E140037BFAD /* Localizable.strings in Resources */,
 				A14846D31B048D690037BFAD /* LaunchScreen.xib in Resources */,
+				A12269C71B0DB16300CE0992 /* Localizable.stringsdict in Resources */,
 				A14846B81B0489750037BFAD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +293,17 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A12269C51B0DB16300CE0992 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A12269C61B0DB16300CE0992 /* en */,
+				A12269C81B0DB16D00CE0992 /* fr */,
+				A12269C91B0DB16F00CE0992 /* ru */,
+				A12269CA1B0DB17200CE0992 /* zh-Hant */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 		A14846D61B048E140037BFAD /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
