@@ -36,7 +36,7 @@ class DateTimeViewController: UIViewController {
     @IBOutlet weak var increaseDateLabel: UILabel!
     @IBOutlet weak var increaseTimeLabel: UILabel!
     
-    // Only need one DateFormatter, just keep changing its locale.
+    // Only need one DateFormatter, just keep changing its locale and style.
     private let dateFormatter = NSDateFormatter()
     
     // Keep track of the current slider values to offset the date and time by.
@@ -75,6 +75,7 @@ class DateTimeViewController: UIViewController {
 
     // MARK: Actions
     
+    // Handle the user moving the date slider.
     @IBAction func increaseDateInterval(sender: AnyObject) {
         let mySlider = sender as! UISlider
         dateSliderValue = Int(mySlider.value)
@@ -82,6 +83,7 @@ class DateTimeViewController: UIViewController {
         showDates()
     }
     
+    // Handle the user moving the time slider.
     @IBAction func increaseTimeInterval(sender: AnyObject) {
         let mySlider = sender as! UISlider
         timeSliderValue = Int(mySlider.value)
