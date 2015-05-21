@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--$DATETIME$-->
+        <!--Dates & Times-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="DateTimeViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" userLabel="Dates &amp; Times" customClass="DateTimeViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -185,10 +185,48 @@
             </objects>
             <point key="canvasLocation" x="750" y="-310"/>
         </scene>
-        <!--$HEALTHKIT$-->
+        <!--Plurals-->
+        <scene sceneID="4aH-YX-BPp">
+            <objects>
+                <viewController id="fqB-si-Yr5" userLabel="Plurals" customClass="PluralViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6hm-qv-7bA"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyM-di-CgB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nVd-Jp-ihs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="$PLURALS$" image="first" id="ds0-Bd-vja"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQu-cK-HJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="-310"/>
+        </scene>
+        <!--Address-->
+        <scene sceneID="rku-dg-CjO">
+            <objects>
+                <viewController id="a0C-K0-GWO" userLabel="Address" customClass="AddressViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vq8-ai-DWk"/>
+                        <viewControllerLayoutGuide type="bottom" id="APH-4y-R97"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jDO-RY-RXY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="$ADDRESS$" image="first" id="fYL-K1-qMv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sb2-bf-BEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="382"/>
+        </scene>
+        <!--HealthKit-->
         <scene sceneID="dFl-1A-na8">
             <objects>
-                <viewController id="xAl-Hn-vn4" customClass="HealthKitViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xAl-Hn-vn4" userLabel="HealthKit" customClass="HealthKitViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FHA-hv-MLK"/>
                         <viewControllerLayoutGuide type="bottom" id="l4F-sy-K6l"/>
@@ -204,10 +242,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="1094"/>
         </scene>
-        <!--$LOC$-->
+        <!--Locale-->
         <scene sceneID="dzY-Xd-crb">
             <objects>
-                <viewController id="kby-Um-pmr" customClass="LocaleViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kby-Um-pmr" userLabel="Locale" customClass="LocaleViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZJk-cY-rSq"/>
                         <viewControllerLayoutGuide type="bottom" id="6RF-Mi-f3o"/>
@@ -331,10 +369,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="-1019"/>
         </scene>
-        <!--$NUMBERS$-->
+        <!--Numbers-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="NumberViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="Numbers" customClass="NumberViewController" customModule="LocaleExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -385,6 +423,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$PLACEHOLDER$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmo-UA-nwe">
+                                <rect key="frame" x="174" y="57" width="410" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$PLACEHOLDER$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D90-wt-RdE">
                                 <rect key="frame" x="174" y="86" width="410" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -415,21 +459,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$INCNUM$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHi-97-Th8">
-                                <rect key="frame" x="16" y="318" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="100000" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-3w-lPg" userLabel="Number Slider">
                                 <rect key="frame" x="14" y="347" width="572" height="31"/>
                                 <connections>
                                     <action selector="increaseNumber:" destination="8rJ-Kc-sve" eventType="valueChanged" id="pmn-YS-6mz"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$PLACEHOLDER$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmo-UA-nwe">
-                                <rect key="frame" x="174" y="57" width="410" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$INCNUM$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHi-97-Th8">
+                                <rect key="frame" x="16" y="318" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -479,6 +517,8 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="KwZ-bD-TKM"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="us2-No-xDP"/>
                         <segue destination="xAl-Hn-vn4" kind="relationship" relationship="viewControllers" id="zyF-3P-IxX"/>
+                        <segue destination="fqB-si-Yr5" kind="relationship" relationship="viewControllers" id="W7a-QI-zl6"/>
+                        <segue destination="a0C-K0-GWO" kind="relationship" relationship="viewControllers" id="3fB-aY-L3A"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

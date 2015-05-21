@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A12269C01B0DAC2600CE0992 /* PluralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12269BF1B0DAC2600CE0992 /* PluralViewController.swift */; };
+		A12269C41B0DAD7900CE0992 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A12269C31B0DAD7900CE0992 /* AddressViewController.m */; };
 		A14846AF1B0489750037BFAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846AE1B0489750037BFAD /* AppDelegate.swift */; };
 		A14846B11B0489750037BFAD /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B01B0489750037BFAD /* DateTimeViewController.swift */; };
 		A14846B31B0489750037BFAD /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B21B0489750037BFAD /* NumberViewController.swift */; };
@@ -30,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A12269BF1B0DAC2600CE0992 /* PluralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PluralViewController.swift; path = controllers/PluralViewController.swift; sourceTree = "<group>"; };
+		A12269C11B0DAD7900CE0992 /* LocaleExplorer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocaleExplorer-Bridging-Header.h"; sourceTree = "<group>"; };
+		A12269C21B0DAD7900CE0992 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressViewController.h; path = controllers/AddressViewController.h; sourceTree = "<group>"; };
+		A12269C31B0DAD7900CE0992 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressViewController.m; path = controllers/AddressViewController.m; sourceTree = "<group>"; };
 		A14846A91B0489750037BFAD /* LocaleExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocaleExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14846AD1B0489750037BFAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14846AE1B0489750037BFAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A14846AE1B0489750037BFAD /* AppDelegate.swift */,
+				A12269C11B0DAD7900CE0992 /* LocaleExplorer-Bridging-Header.h */,
 				A14846D41B048DDB0037BFAD /* controllers */,
 				A14846D51B048DEA0037BFAD /* resources */,
 				A14846AC1B0489750037BFAD /* Supporting Files */,
@@ -124,10 +131,13 @@
 		A14846D41B048DDB0037BFAD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A12269C21B0DAD7900CE0992 /* AddressViewController.h */,
+				A12269C31B0DAD7900CE0992 /* AddressViewController.m */,
 				A14846B01B0489750037BFAD /* DateTimeViewController.swift */,
 				A14846DE1B04A8AD0037BFAD /* HealthKitViewController.swift */,
 				A14846DC1B0490550037BFAD /* LocaleViewController.swift */,
 				A14846B21B0489750037BFAD /* NumberViewController.swift */,
+				A12269BF1B0DAC2600CE0992 /* PluralViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -135,10 +145,10 @@
 		A14846D51B048DEA0037BFAD /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				A14846B71B0489750037BFAD /* Images.xcassets */,
+				A14846D21B048D690037BFAD /* LaunchScreen.xib */,
 				A14846D61B048E140037BFAD /* Localizable.strings */,
 				A14846D01B048D520037BFAD /* Main.storyboard */,
-				A14846D21B048D690037BFAD /* LaunchScreen.xib */,
-				A14846B71B0489750037BFAD /* Images.xcassets */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -247,6 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12269C01B0DAC2600CE0992 /* PluralViewController.swift in Sources */,
+				A12269C41B0DAD7900CE0992 /* AddressViewController.m in Sources */,
 				A14846DD1B0490550037BFAD /* LocaleViewController.swift in Sources */,
 				A14846B31B0489750037BFAD /* NumberViewController.swift in Sources */,
 				A14846DF1B04A8AD0037BFAD /* HealthKitViewController.swift in Sources */,
@@ -375,9 +387,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LocaleExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocaleExplorer/LocaleExplorer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -385,9 +400,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LocaleExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocaleExplorer/LocaleExplorer-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -444,6 +461,7 @@
 				A14846CC1B0489750037BFAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14846CD1B0489750037BFAD /* Build configuration list for PBXNativeTarget "LocaleExplorerTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +470,7 @@
 				A14846CF1B0489750037BFAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
