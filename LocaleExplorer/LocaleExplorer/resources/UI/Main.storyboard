@@ -244,25 +244,25 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guE-T8-q4w">
                                 <rect key="frame" x="46" y="171" width="508" height="229"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="$PLACHOLDER$" translatesAutoresizingMaskIntoConstraints="NO" id="jcN-iT-07Z" userLabel="Address Format Text View">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="$PLACHOLDER$" translatesAutoresizingMaskIntoConstraints="NO" id="jcN-iT-07Z" userLabel="Address Format Text View">
                                         <rect key="frame" x="0.0" y="29" width="250" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ADDRFORMAT$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KZ-U0-RGX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$ADDRFORMAT$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KZ-U0-RGX">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$EXAMPLE$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuI-Bh-y9Y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$EXAMPLE$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuI-Bh-y9Y">
                                         <rect key="frame" x="258" y="0.0" width="250" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="$PLACEHOLDER$" translatesAutoresizingMaskIntoConstraints="NO" id="oEr-tl-Vr3" userLabel="Example Text View">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="$PLACEHOLDER$" translatesAutoresizingMaskIntoConstraints="NO" id="oEr-tl-Vr3" userLabel="Example Text View">
                                         <rect key="frame" x="258" y="29" width="250" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -270,6 +270,16 @@
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6KZ-U0-RGX" firstAttribute="leading" secondItem="guE-T8-q4w" secondAttribute="leading" id="DEV-Pc-Z7w"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZuI-Bh-y9Y" secondAttribute="trailing" id="HrP-fA-Yje"/>
+                                    <constraint firstItem="jcN-iT-07Z" firstAttribute="leading" secondItem="guE-T8-q4w" secondAttribute="leading" id="Mpw-Yd-kNr"/>
+                                    <constraint firstAttribute="bottom" secondItem="oEr-tl-Vr3" secondAttribute="bottom" id="Mwl-WI-VDB"/>
+                                    <constraint firstAttribute="bottom" secondItem="jcN-iT-07Z" secondAttribute="bottom" id="Pph-Kd-aFU"/>
+                                    <constraint firstItem="6KZ-U0-RGX" firstAttribute="top" secondItem="guE-T8-q4w" secondAttribute="top" id="ZJQ-mN-AbF"/>
+                                    <constraint firstItem="ZuI-Bh-y9Y" firstAttribute="top" secondItem="guE-T8-q4w" secondAttribute="top" id="co1-r7-OT3"/>
+                                    <constraint firstAttribute="trailing" secondItem="oEr-tl-Vr3" secondAttribute="trailing" id="qoG-cJ-cpv"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -301,9 +311,111 @@
                     <view key="view" contentMode="scaleToFill" id="vR8-BT-KoA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ENERGY$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux8-6G-Zt3">
+                                <rect key="frame" x="16" y="28" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$PLACEHOLDER$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sre-oo-pgr">
+                                <rect key="frame" x="16" y="57" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$LENGTH$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfM-sh-uFw">
+                                <rect key="frame" x="16" y="86" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$PLACEHOLDER$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXn-rE-9Dg">
+                                <rect key="frame" x="16" y="115" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$MASS$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYp-MM-Q9b">
+                                <rect key="frame" x="16" y="144" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$PLACEHOLDER$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pe-yq-m4a">
+                                <rect key="frame" x="16" y="173" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$INCVAL$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWp-lB-RXr">
+                                <rect key="frame" x="16" y="231" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="KFs-Lh-f9K" userLabel="Value Slider">
+                                <rect key="frame" x="14" y="260" width="572" height="31"/>
+                                <connections>
+                                    <action selector="increaseValue:" destination="xAl-Hn-vn4" eventType="valueChanged" id="DZl-SA-ZR2"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$FORFOOD$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D78-lJ-n4t">
+                                <rect key="frame" x="231" y="28" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$FORPERMASS$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osJ-nh-7gk">
+                                <rect key="frame" x="231" y="144" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ATE-cM-CRM" userLabel="Food Switch">
+                                <rect key="frame" x="174" y="23" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleFood:" destination="xAl-Hn-vn4" eventType="valueChanged" id="5W0-Df-zux"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vEr-un-3Kw" userLabel="Height Switch">
+                                <rect key="frame" x="174" y="81" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleHeight:" destination="xAl-Hn-vn4" eventType="valueChanged" id="X7b-FU-bG1"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S7M-9v-45x" userLabel="Mass Switch">
+                                <rect key="frame" x="174" y="139" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleMass:" destination="xAl-Hn-vn4" eventType="valueChanged" id="OMz-w3-HNZ"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$FORPERHEIGHT$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bA-VA-aZp">
+                                <rect key="frame" x="231" y="86" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KFs-Lh-f9K" secondAttribute="trailing" constant="16" id="jQd-27-eH2"/>
+                            <constraint firstItem="KFs-Lh-f9K" firstAttribute="leading" secondItem="vR8-BT-KoA" secondAttribute="leading" constant="16" id="yft-xt-NxZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="$HEALTHKIT$" image="first" id="MXy-Gr-Fa7"/>
+                    <connections>
+                        <outlet property="energyLabel" destination="Ux8-6G-Zt3" id="pAx-TA-pYb"/>
+                        <outlet property="energyPlaceholderLabel" destination="sre-oo-pgr" id="Iq4-42-6Q6"/>
+                        <outlet property="forFoodLabel" destination="D78-lJ-n4t" id="zCU-0Y-8Rm"/>
+                        <outlet property="forPersonHeightLabel" destination="7bA-VA-aZp" id="8mr-41-dYN"/>
+                        <outlet property="forPersonMassLabel" destination="osJ-nh-7gk" id="5nf-zl-Sfd"/>
+                        <outlet property="increaseValueLabel" destination="WWp-lB-RXr" id="O8f-Xa-NdK"/>
+                        <outlet property="lengthLabel" destination="qfM-sh-uFw" id="3bM-zc-IgL"/>
+                        <outlet property="lengthPlaceholderLabel" destination="nXn-rE-9Dg" id="jgy-H2-DGq"/>
+                        <outlet property="massLabel" destination="cYp-MM-Q9b" id="YW9-IX-3B0"/>
+                        <outlet property="massPlaceholderLabel" destination="9Pe-yq-m4a" id="rxF-bX-vn1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsO-G7-9Oc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
