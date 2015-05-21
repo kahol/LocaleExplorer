@@ -55,6 +55,10 @@ class DateTimeViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Set to current locale and GMT time zone.
+        dateFormatter.locale = NSLocale(localeIdentifier: currentLocaleCode)
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        
         // Display the dates and times. Having it here ensures these will also get called when
         // the user changes tabs, in case they changed the current locale.
         showDates()
@@ -111,13 +115,10 @@ class DateTimeViewController: UIViewController {
     
     // Show localized dates.
     func showDates() {
-        // Setup our date formatter using the currently set locale.
-        let currentLocale = NSLocale(localeIdentifier: currentLocaleCode)
-        dateFormatter.locale = currentLocale
-        
         // The date offset from the slider value, which can be from 0 to 365.
+        // Start from the reference date of 1/1/2001.
         let dateInterval = 60 * 60 * 24 * dateSliderValue;
-        let date = NSDate(timeIntervalSinceNow: Double(dateInterval))
+        let date = NSDate(timeIntervalSinceReferenceDate: Double(dateInterval))
         
         // Show localized dates.
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
@@ -142,13 +143,10 @@ class DateTimeViewController: UIViewController {
     
     // Show localized times.
     func showTimes() {
-        // Setup our date formatter using the currently set locale.
-        let currentLocale = NSLocale(localeIdentifier: currentLocaleCode)
-        dateFormatter.locale = currentLocale
-        
         // The time offset from the slider value, which can be from 0 to 24 * 60 (1440).
+        // Start from the reference time of 12:00 AM GMT.
         let timeInterval = 60 * timeSliderValue;
-        let date = NSDate(timeIntervalSinceNow: Double(timeInterval))
+        let date = NSDate(timeIntervalSinceReferenceDate: Double(timeInterval))
         
         // Show localized times.
         dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
