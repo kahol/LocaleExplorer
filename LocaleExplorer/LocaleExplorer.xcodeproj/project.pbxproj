@@ -10,6 +10,7 @@
 		A12269C01B0DAC2600CE0992 /* PluralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12269BF1B0DAC2600CE0992 /* PluralViewController.swift */; };
 		A12269C41B0DAD7900CE0992 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A12269C31B0DAD7900CE0992 /* AddressViewController.m */; };
 		A12269C71B0DB16300CE0992 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = A12269C51B0DB16300CE0992 /* Localizable.stringsdict */; };
+		A12269CC1B0DC27A00CE0992 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12269CB1B0DC27A00CE0992 /* AddressBookUI.framework */; };
 		A14846AF1B0489750037BFAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846AE1B0489750037BFAD /* AppDelegate.swift */; };
 		A14846B11B0489750037BFAD /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B01B0489750037BFAD /* DateTimeViewController.swift */; };
 		A14846B31B0489750037BFAD /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14846B21B0489750037BFAD /* NumberViewController.swift */; };
@@ -41,6 +42,7 @@
 		A12269C81B0DB16D00CE0992 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = fr; path = resources/languages/fr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A12269C91B0DB16F00CE0992 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = ru; path = resources/languages/ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A12269CA1B0DB17200CE0992 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "zh-Hant"; path = "resources/languages/zh-Hant.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
+		A12269CB1B0DC27A00CE0992 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		A14846A91B0489750037BFAD /* LocaleExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocaleExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14846AD1B0489750037BFAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14846AE1B0489750037BFAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12269CC1B0DC27A00CE0992 /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,11 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A12269CD1B0DC28300CE0992 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A12269CB1B0DC27A00CE0992 /* AddressBookUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A14846A01B0489750037BFAD = {
 			isa = PBXGroup;
 			children = (
 				A14846AB1B0489750037BFAD /* LocaleExplorer */,
 				A14846C31B0489750037BFAD /* LocaleExplorerTests */,
+				A12269CD1B0DC28300CE0992 /* Frameworks */,
 				A14846AA1B0489750037BFAD /* Products */,
 			);
 			sourceTree = "<group>";

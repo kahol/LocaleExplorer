@@ -10,4 +10,12 @@
 
 @interface AddressViewController : UIViewController
 
+// Text Views that will be replaced with runtime values.
+@property (weak, nonatomic) IBOutlet UITextView *addressFormatTextView;
+@property (weak, nonatomic) IBOutlet UITextView *exampleTextView;
+
+// IBOutlets for localizing the strings.
+@property (weak, nonatomic) IBOutlet UILabel *addressFormatLabel;
+@property (weak, nonatomic) IBOutlet UILabel *exampleLabel;
+
 @end

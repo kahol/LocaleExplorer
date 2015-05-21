@@ -129,5 +129,12 @@ class LocaleViewController: UIViewController {
         currentLocaleCodePlaceholderLabel.text = currentLocaleCode
         currentLocaleNamePlaceholderLabel.text = deviceLocale.displayNameForKey(NSLocaleIdentifier, value: currentLocaleCode)
     }
+    
+    // MARK: Class Methods
+    
+    // Globals defined in Swift cannot be accessed in Objective-C code, so this class method is a workaround.
+    class func curLocale() -> String {
+        return currentLocaleCode
+    }
 
 }

@@ -240,9 +240,51 @@
                     <view key="view" contentMode="scaleToFill" id="jDO-RY-RXY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guE-T8-q4w">
+                                <rect key="frame" x="46" y="171" width="508" height="229"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="$PLACHOLDER$" translatesAutoresizingMaskIntoConstraints="NO" id="jcN-iT-07Z" userLabel="Address Format Text View">
+                                        <rect key="frame" x="0.0" y="29" width="250" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ADDRFORMAT$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KZ-U0-RGX">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$EXAMPLE$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuI-Bh-y9Y">
+                                        <rect key="frame" x="258" y="0.0" width="250" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="$PLACEHOLDER$" translatesAutoresizingMaskIntoConstraints="NO" id="oEr-tl-Vr3" userLabel="Example Text View">
+                                        <rect key="frame" x="258" y="29" width="250" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="guE-T8-q4w" firstAttribute="centerY" secondItem="jDO-RY-RXY" secondAttribute="centerY" id="MzV-Tx-d6Q"/>
+                            <constraint firstItem="guE-T8-q4w" firstAttribute="centerX" secondItem="jDO-RY-RXY" secondAttribute="centerX" id="mZb-Aa-hza"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="$ADDRESS$" image="first" id="fYL-K1-qMv"/>
+                    <connections>
+                        <outlet property="addressFormatLabel" destination="6KZ-U0-RGX" id="l7v-4w-yWS"/>
+                        <outlet property="addressFormatTextView" destination="jcN-iT-07Z" id="SsO-5P-Fno"/>
+                        <outlet property="exampleLabel" destination="ZuI-Bh-y9Y" id="Iaa-1K-0oH"/>
+                        <outlet property="exampleTextView" destination="oEr-tl-Vr3" id="dbG-PM-0gD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb2-bf-BEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -472,7 +514,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="$PLACEHOLDER$" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHv-iC-7Ix" userLabel="Spell out number">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="$PLACEHOLDER$" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHv-iC-7Ix" userLabel="Spell Out Text View">
                                 <rect key="frame" x="16" y="202" width="568" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
